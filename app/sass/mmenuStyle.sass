@@ -1,0 +1,51 @@
+.mm-navbar
+	height: auto
+	position: relative
+	border: none
+	.mm-title
+		padding: 0
+		img
+			width: 128px
+			height: auto
+			margin: 10px 0 35px
+html.mm-opened
+	overflow-y: scroll
+.mm-panels >
+	.mm-panel::after,
+	.mm-panel::before
+		height: 0
+
+.mm-listview>li:not(.mm-divider)::after
+  display: none
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>
+  a:not(.mm-text),span
+    background: transparent
+    color: $accent
+.mm-panels
+	& > .mm-panel
+		& > .mm-navbar + .mm-listview
+			margin-top: 0
+.mm-panel .mm-panel .mm-hasnavbar
+  right: -18px
+
+.mm-listview li
+  > a
+    transition: color .3s ease
+    padding-left: 14%
+    padding-right: 14%
+    padding-top: 8px
+    &:hover
+      color: $accent
+      &::before
+        color: $accent
+    &::before
+      content: '\f219'
+      font-family: fontawesome
+      margin-right: 8px
+      text-decoration: none
+      font-size: 13px
+      color: #fff
+      transition: color .3s ease
+  .active
+    & > a
+      color: $accent

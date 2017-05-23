@@ -1,0 +1,22 @@
+{
+  "name": "Milter",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Igor Myasnikov"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/pilium/Mitler",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery.mmenu": "mmenu#^6.1.0",
+    "owl-carousel": "^1.3.2"
+  }
+}

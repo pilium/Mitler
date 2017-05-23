@@ -2,6 +2,51 @@ header(style={background: 'url(img/top-bg.jpg) center no-repeat'}).site-header
     .top-line
         a(href="#0").logo
             img(src="img/logo-1.svg", alt="Салон красоты")
-        .phone
+        .phone.hidden-xs
             i.fa.fa-mobile
             a(href="tel:+74951189435") +7 (495) 118-94-35
+        a(href="#my-menu").hamburger.hamburger--emphatic#my-icon
+            span.hamburger-box
+                span.hamburger-inner
+        include menu.pug
+    .header-flex
+        .flex-center
+            .container
+                .row
+                    .col-sm-7.col-xs-10
+                        .header-composition
+                            .welcome
+                                p: span Добро пожаловать в профессиональный
+                                h1.h1 Салон красоты
+                                strong 
+                                    i.fa.fa-star 
+                                    | В москве
+                                    i.fa.fa-star
+                            p 
+                                strong S&Mitler 
+                                |  - это салон красоты бизнес-класса. Мастера салона дарят
+                                | посетителям уверенность в себе и индивидуальный стиль. Здесь
+                                | представлены все самые востребованные услуги бьюти-индустрии.
+                            a(href="#0").btn.header-btn О салоне
+    .header-social 
+        nav.social-icons
+            ul
+                li: a(href="#0"): i.fa.fa-facebook
+                li: a(href="#0"): i.fa.fa-instagram
+                li: a(href="#0"): i.fa.fa-vk
+    .header-contacts
+        .container
+            .row
+                .col-md-4.col-sm-6
+                    i.fa.fa-location-arrow 
+                    | г. Москва, ул. Ивана Бабушкин, 22с1
+                .col-md-4.col-md-6
+                    .phone-header
+                        i.fa.fa-mobile
+                        a(href="tel:+74959227773") +7(495) 922-77-73
+                .col-md-4.hidden-sm.hidden-xs
+                    i.fa.fa-clock-o
+                    | Время работы: ежедневно: 10:00 - 22:00
+
+
+        
