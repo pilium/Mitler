@@ -73,7 +73,6 @@ $(".carousel-services__composition .h3").each(function() {
   e.html(e.html().replace(/(\S+)\s*$/, "<span>$1</span>"))
 });
 $('select').selectize();
-
 //E-mail Ajax Send
 	$("form.callback").submit(function() { //Change
 		var th = $(this);
@@ -91,3 +90,12 @@ $('select').selectize();
 		});
 		return false;
 	});
+  $(document).ready(function() {
+    $('.reviews').owlCarousel({
+      loop: true,
+      items: 1,
+      smartSpeed: 700,
+      nav: false,
+      autoHeight: true,
+      dots: true
+  })});
