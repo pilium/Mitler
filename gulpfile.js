@@ -34,11 +34,14 @@ gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/jQuery.mmenu/dist/jquery.mmenu.all.js',
-		"app/libs/owl-carousel/owl-carousel/owl.carousel.min.js"
+		"app/libs/owl.carousel/owl.carousel.min.js",
+		"app/libs/jQuery.equalHeights/jquery.equalheights.min.js",
+		"app/libs/fotorama/fotorama.js",
 		'app/js/common.js', // Всегда в конце
 		])
+	.pipe(plumber())
 	.pipe(concat('scripts.min.js'))
-	.pipe(uglify()) // Минимизировать весь js (на выбор)
+	//.pipe(uglify()) // Минимизировать весь js (на выбор)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });

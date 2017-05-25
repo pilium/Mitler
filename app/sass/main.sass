@@ -97,6 +97,15 @@ header
 	background-position: center
 section
 	background-color: #fff
+	&.inverse
+		color: #fff
+		background-color: $dark
+	.h2
+		font-size: 30px
+		font-weight: 800
+		color: $accent
+		span
+			color: #fff
 .img-responsive
 	display: block
 	max-width: 100%
@@ -141,6 +150,18 @@ section
 		background-color: darken($accent, 5%)
 		&::after
 			opacity: .32
+	&.btn--white
+		background-color: #fff
+		color: #444
+		&::after
+			background-color: rgba(#000, .6)
+		&:hover
+			&::after
+				background-color: rgba(#000, .2)
+		&:active
+			&::after
+				background-color: rgba(#000, .2)
+
 
 // Header
 .header-flex
@@ -245,6 +266,141 @@ section
 		margin-right: 7px
 		color: #555
 
+// Services
+$colors: $blue, $red, $accent
+@for $i from 1 through length($colors)
+	.carousel-services .owl-item:nth-child(3n+#{$i})
+		background-color: nth($colors, $i)
+
+.owl-carousel
+	.owl-item
+		backface-visibility: inherit
+
+.carousel-services
+	background-color: $dark
+	&__item
+		position: relative
+		display: flex
+		flex-direction: column-reverse
+		font-size: 18px
+		color: #fff
+		font-weight: 300
+		&:hover
+			.carousel-services__image
+				opacity: 1
+		.carousel-logo
+			text-align: center
+			img
+				display: inline-block
+				width: 100px
+				height: auto
+	.owl-item
+		&:nth-child(2n+2)
+			.carousel-services__item
+				flex-direction: column
+	&__image
+		background-size: cover
+		background-position: center
+		opacity: .9
+		transition: opacity .5s ease
+	&__content
+		position: relative
+		padding: 60px 10%
+
+	&__composition
+		margin: auto
+		width: 100%
+		text-align: center
+		.h3
+			font-weight: 800
+			font-size: 28px
+			margin-top: 5px
+			margin-bottom: 20px
+			text-transform: uppercase
+			span
+				display: block
+				font-weight: normal
+				font-size: 18px
+				font-weight: 300
+	&__list
+		margin: 0
+		padding: 0
+		list-style-type: none
+		margin-bottom: 25px
+		li
+			padding: 9px
+			border-bottom: 1px solid rgba(#000, .12)
+			&:last-child
+				border-bottom: none
+			strong
+				font-family: firasans,sans-serif
+				color: #4a4a4a
+	.owl-nav
+		position: absolute
+		top: 0
+		width: 100%
+		> div
+			width: 64px
+			height: 64px
+			background-color: #fff
+			color: $dark
+			position: absolute
+			text-align: center
+			line-height: 64px
+			&.owl-prev
+				left: 0
+			&.owl-next
+				right: 0
+section.kingSalon,
+section.review,
+section.partners
+	padding: 5% 0
+section.kingSalon
+	p
+		margin: 30px 0
+		font-size: 18px
 
 
+.section-overlay
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $overlay
+		opacity: .92
+
+.fotorama
+	background-color: rgba($dark, .4)
+	&__nav
+		&-wrap
+		position: absolute
+		bottom: 15px
+		padding: 0 30px
+		width: 100%
+	&__thumb
+		border: 5px solid #fff
+		transition: border-color .5s ease
+		&-border
+			border-color: #3d3c3c
+	&__active
+		.fotorama__thumb
+			border-color: #3d3c3c
+	&__nav::after,&_stage::after,
+	&__nav::before,&_stage::before
+		display: none
+	&__arr-
+		&-next,&-prev
+			&::before
+				font-family: fontawesome
+				font-size: 32px
+		&-next
+			&::before
+				content: '\f105'
+		&-prev
+			left: 20px
+			&::before
+				content: '\f104'
 @import "media" // Всегда в конце
