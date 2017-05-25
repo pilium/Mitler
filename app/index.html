@@ -167,8 +167,28 @@
         <section class="call inverse" style="background-image:url(img/madama.jpg);">
           <div class="container">
             <div class="row">
-              <div class="col-sm-6 col-sm-offset-6">
-                <form class="callback"></form>
+              <div class="col-md-5 col-md-offset-7 col-sm-6 col-sm-offset-6">
+                <form class="callback">
+                  <div class="success"><span>Спасибо за заявку!</span></div>
+                  <input type="hidden" name="project_name" value="Mitler">
+                  <input type="hidden" name="admin_email" value="igorpilium@gmail.com">
+                  <input type="hidden" name="form_subject" value="Заявка Mitler">
+                  <input type="hidden" name="Страница" value="">
+                  <div class="callback-logo"><img src="img/logo-2.svg" alt="Mitler"></div>
+                  <div class="form-head">Оставить заявку</div>
+                  <p>Оставьте завку и мы перезвоним вам в течение 15 минут.</p>
+                  <input type="text" name="Имя" placeholder="Ваше имя..." required>
+                  <input type="text" name="Телефон" placeholder="Ваш телефон" required>
+                  <select name="Услуга">
+                    <option value disabled selected>Выбрать услугу</option>
+                    <option>Парикмахерский сервис</option>
+                    <option>Косметологический</option>
+                    <option>Маникюрный сервис</option>
+                    <option>Массаж и SPA</option>
+                    <option>Солярий</option>
+                  </select>
+                  <button class="btn btn--white">Отправить</button>
+                </form>
               </div>
             </div>
           </div>

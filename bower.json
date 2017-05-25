@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "jQuery.mmenu": "mmenu#^6.1.0",
-    "jQuery.equalHeights": "jquery.equalheights#^1.5.2"
+    "jQuery.equalHeights": "jquery.equalheights#^1.5.2",
+    "selectize": "^0.12.4"
   }
 }

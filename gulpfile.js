@@ -37,6 +37,7 @@ gulp.task('js', function() {
 		"app/libs/owl.carousel/owl.carousel.min.js",
 		"app/libs/jQuery.equalHeights/jquery.equalheights.min.js",
 		"app/libs/fotorama/fotorama.js",
+		'app/libs/selectize/dist/js/standalone/selectize.min.js',
 		'app/js/common.js', // Всегда в конце
 		])
 	.pipe(plumber())
