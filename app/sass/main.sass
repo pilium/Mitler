@@ -1,9 +1,59 @@
 @import "fonts"
-@import "libs"
 @import "vars"
+
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
+
+.preloader
+		position: fixed
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		z-index: 100500
+		background-color: $dark
+		.pulse
+			position: relative
+			left: 50%
+			top: 50vh
+			margin:
+				left: -40px
+				top: -40px
+			&::after,&::before
+				content: ''
+				border: 5px solid #323232
+				width: 80px
+				height: 80px
+				border-radius: 500px
+				position: absolute
+			&::before
+				animation: pulse-outer .8s ease-in infinite
+			&::after
+				animation: pulse-inner .8s linear infinite
+
+
+@keyframes pulse-outer
+	0%
+		@include opacity(100)
+	50%
+		@include opacity(50)
+	100%
+		@include opacity(0)
+
+@keyframes pulse-inner
+	0%
+		@include opacity(0)
+		transform: scale(0)
+	100%
+		@include opacity(100)
+		transform: scale(1)
+@import "libs"
 @import "hamburger"
 // Стилизация плагинов
 @import "mmenuStyle"
+
+
 
 
 *::-webkit-input-placeholder
@@ -59,6 +109,9 @@ body
 				width: 100%
 				padding-top: 40px
 				z-index: 1
+
+
+
 .logo
 	img
 		width: 125px
@@ -366,6 +419,11 @@ section.call
 		right: 0
 		height: 100%
 		background-color: rgba($accent, .92)
+section.partners
+	.h2
+		margin-top: 10px
+	&::before
+		background-color: rgba(250, 250, 250, .95)
 
 .section-overlay
 	&::before
@@ -571,4 +629,157 @@ select
 		right: -60px
 		transform: rotate(0)
 
+// Секция партнеры
+.partners
+	.partner-item
+		display: flex
+		height: auto
+		margin: auto
+	.owl-stage
+		display: flex
+		.owl-item
+			margin-top: 30px
+			img
+				width: auto
+				max-width: 100%
+				display: inline-block
+				margin: auto
+	.owl-nav
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		z-index: 2
+		> div
+			position: absolute
+			top: 50px
+			color: #999
+			font-size: 30px
+			transition: opacity .5s ease
+			padding: 0 10px
+			&:hover
+				opacity: .6
+			&.owl-prev
+				left: -60px
+			&.owl-next
+				right: -60px
+// Footer
+.main-footer
+	padding: 3% 0
+	font-size: 14px
+	color: #fff
+	background-color: #242424
+
+.footer-column
+	margin: 15px 0
+
+.logo-footer
+		width: 125px
+		height: auto
+		+ p
+			margin:
+				bottom: 15px
+				top: 15px
+			font-size: 14px
+			padding: 0
+			color: #666
+.social-footer
+	margin-top: 38px
+	.social-icons
+		li
+			display: inline-block
+			margin: 3px
+			a
+				color: #ababab
+				margin-bottom: 0
+				transition: color .5s ease
+				&:hover
+					color: rgba(#fff, .8)
+.footer-menu
+	ul
+		padding: 0
+		margin: 0
+		list-style: none
+		li.active
+			a
+				color: $accent
+				&::before
+					color: $accent
+		a
+			display: inline-block
+			position: relative
+			padding: 3.5px 0
+			padding-left: 20px
+			color: #979797
+			transition: color .5s ease
+			text-decoration: underline
+			&:hover, &:focus
+				color: $accent
+				&::before
+					color: $accent
+			&::before
+				content: '\f219'
+				margin-right: 12px
+				position: absolute
+				top: 6px
+				left: 0
+				font-family: fontawesome
+				font-size: 12px
+				color: #fff
+				transition: color .5s ease
+
+p.footer-addr
+	position: relative
+	font-size: 15px
+	padding-left: 24px
+	margin: 0 0 20px
+	.fa
+		position: absolute
+		left: 0
+		top: 5px
+		font-size: 18px
+		color: #555
+	.footer-phone
+		font-size: 26px
+		font-family: firasans,sans-serif
+		padding-top: 10px
+		display: block
+		white-space: nowrap
+		.fa
+			top: 22px
+			left: 2px
+			font-size: 20px
+.map
+	max-height: 200px
+	opacity: .8
+	transition:  opacity .5s ease
+	&:hover
+		opacity: 1
+
+
+// Кнопка наверх
+.top
+	position: fixed
+	bottom: 25px
+	right: -100px
+	width: 50px
+	height: 50px
+	background-color: #e0e0e0
+	z-index: 100
+	border-radius: 10em
+	text-align: center
+	line-height: 50px
+	color: #666
+	font-size: 26px
+	cursor: pointer
+	transition: all .5s ease
+	opacity: .5
+	i
+		line-height: 0
+	&:hover
+		color: #fff
+		background-color: $accent
+		opacity: 1
+	&.active
+		right: 25px
 @import "media" // Всегда в конце

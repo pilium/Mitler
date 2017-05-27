@@ -1,3 +1,8 @@
+  $(window).on('load',function() {
+    $('.preloader').delay(1000).fadeOut('slow');
+  });
+
+
 var $menu = $("#my-menu").mmenu({
     extensions: [
       "theme-black", "effect-menu-slide", "pagedim-black"
@@ -90,6 +95,18 @@ $('select').selectize();
 		});
 		return false;
 	});
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > $(this).height()) {
+      $('.top').addClass('active');
+    } else {
+      $('.top').removeClass('active');
+    }
+  });
+  $('.top').click(function() {
+    $('html,body').stop().animate({scrollTop: 0}, 'slow', 'swing')
+  });
+
   $(document).ready(function() {
     $('.reviews').owlCarousel({
       loop: true,
@@ -98,4 +115,32 @@ $('select').selectize();
       nav: false,
       autoHeight: true,
       dots: true
-  })});
+  });
+  $('.partner').owlCarousel({
+    loop: true,
+    items: 4,
+    smartSpeed: 700,
+    nav: true,
+    navText: [
+      '<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'
+    ],
+    margin: 20,
+    dots: false,
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2
+      },
+      992: {
+        items: 3
+      },
+      1200: {
+        items: 4
+      }
+    }
+})
+
+});
